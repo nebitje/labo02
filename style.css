@@ -35,7 +35,7 @@ body, figure {
 }
 
 p {
-    max-width: 40rem;
+    max-width: 40em;
 }
 
 img {
@@ -84,10 +84,11 @@ header .logo {
 header .logo:after {
     content: "";
     position: absolute;
-    top: 1.4rem;
-    left: 1rem;
-    border: 1px solid;
+    top: 1.5em;
+    left: 1em;
+    height: 2px;
     width: 20%;
+    background-color: var(--primary);
 }
 
 header #menu {
@@ -142,6 +143,12 @@ header nav ul li:after {
     left: -1.5rem;
 }
 
+header nav ul li:hover:before, :focus-visible:before {
+    content: "♦";
+    position: absolute;
+    left: -1.5rem;
+}
+
 header nav ul li a {
     text-decoration: none;
     text-transform: uppercase;
@@ -158,8 +165,6 @@ header #menu[aria-expanded= true] + nav {
 
 header #menu[aria-expanded = false] + nav {
     display: none;
-    animation-name: hideUp;
-    animation-duration: 1s;
 }
 
 /* MAIN */
@@ -287,6 +292,16 @@ footer {
         margin: 1rem 2rem;
     }
 
+    header .logo:after {
+        content: "";
+        position: absolute;
+        top: 1.25em;
+        left: 1em;
+        height: 2px;
+        width: 20%;
+        background-color: var(--primary);
+    }
+
     header nav ul li:after {
         content: "";
         position: absolute;
@@ -392,12 +407,12 @@ header .hamburger:hover {
     0% {
         margin-top: -150%;
         opacity: 0;
-        visibility: hidden;
+        display: none;
     }
     60% {
         margin-top: 0;
         opacity: 0;
-        visibility: visible;
+        display: block;
     }
     100% {
         opacity: 1;
@@ -411,12 +426,11 @@ header .hamburger:hover {
     40% {
         margin-top: 0;
         opacity: 0;
-        visibility: visible;
+        display: none;
     }
     100% {
         margin-top: -150%;
         opacity: 0;
-        visibility: hidden;
         display: none;
     }
 }
